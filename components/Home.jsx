@@ -34,7 +34,7 @@ export const Home = (props) => {
 
       <div className="my-10 grid grid-cols-3 gap-8">
         {props.productReference.map((product) => (
-          <CardHome {...product} />
+          <CardHome {...product} key={product.id} />
         ))}
       </div>
 

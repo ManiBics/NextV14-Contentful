@@ -16,7 +16,7 @@ export default function ComposablePage({ params }) {
       const page = await getPageFromSlug(slug);
       setData(page);
     })();
-  }, []);
+  }, [params?.slug]);
 
   return (
     <div>
