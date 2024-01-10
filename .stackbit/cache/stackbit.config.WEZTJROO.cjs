@@ -23,9 +23,10 @@ __export(stackbit_config_exports, {
 });
 module.exports = __toCommonJS(stackbit_config_exports);
 var import_cms_contentful = require("@stackbit/cms-contentful");
-var import_types = require("@stackbit/types");
-var stackbit_config_default = (0, import_types.defineStackbitConfig)({
+var config = {
   stackbitVersion: "~0.6.0",
+  ssgName: "nextjs",
+  nodeVersion: "18",
   contentSources: [
     new import_cms_contentful.ContentfulContentSource({
       spaceId: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -35,5 +36,6 @@ var stackbit_config_default = (0, import_types.defineStackbitConfig)({
     })
   ],
   modelExtensions: [{ name: "page", type: "page", urlPath: "/{slug}" }]
-});
-//# sourceMappingURL=stackbit.config.XJFZW4IY.cjs.map
+};
+var stackbit_config_default = config;
+//# sourceMappingURL=stackbit.config.WEZTJROO.cjs.map
