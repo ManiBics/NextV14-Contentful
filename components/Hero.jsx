@@ -8,16 +8,21 @@ const themeClassMap = {
 
 export const Hero = (props) => {
   return (
-    <div className="px-12 py-24 bg-gray-100">
+    <div data-sb-object-id={props.id} className="px-12 py-24 bg-gray-100">
       <div
         className={`flex mx-auto max-w-6xl gap-12 ${
           themeClassMap[props.theme] ?? themeClassMap["imgRight"]
         }`}
       >
         <div className="max-w-xl py-20 mx-auto lg:shrink-0">
-          <h1 className="mb-6 text-5xl leading-tight">{props.heading}</h1>
+          <h1
+            data-sb-field-path="heading"
+            className="mb-6 text-5xl leading-tight"
+          >
+            {props.heading}
+          </h1>
           {props.body && (
-            <div options={{ forceBlock: true }} className="mb-6 text-lg">
+            <div data-sb-field-path="body" className="mb-6 text-lg">
               {props.body}
             </div>
           )}
@@ -26,6 +31,7 @@ export const Hero = (props) => {
         <div className="relative hidden w-full overflow-hidden rounded-md lg:block">
           {props.image && (
             <Image
+              data-sb-object-id={props.image.id}
               src={props.image.src}
               alt={props.image.alt}
               layout="fill"

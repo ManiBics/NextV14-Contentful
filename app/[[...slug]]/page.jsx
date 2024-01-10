@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { getPageFromSlug } from "../../utils/content";
 import { Hero } from "../../components/Hero";
 import { Stats } from "../../components/Stats";
+import { Home } from "../../components/Home";
 
 const componentMap = {
   hero: Hero,
   stats: Stats,
+  home: Home,
 };
 
 export default function ComposablePage({ params }) {
@@ -19,7 +21,7 @@ export default function ComposablePage({ params }) {
       setData(page);
     })();
   }, []);
-
+  console.log('data', data)
   return (
     <div>
       {(data.sections || []).map((section, idx) => {
