@@ -1,8 +1,8 @@
 import React from "react";
 import QuiltedImageList from "./ImageList";
-import { Button, Divider } from "@mui/material";
-import CardHome from "./CardHome";
-import ButtonHome from "./ButtonHome";
+import { Divider } from "@mui/material";
+import { StatsHome } from "./StatsHome";
+import { TitleCardImage } from "./TitleCardImage";
 
 export const Home = (props) => {
   return (
@@ -17,7 +17,7 @@ export const Home = (props) => {
           </p>
         </div>
         <div>
-          <QuiltedImageList image={props.image} />
+          <QuiltedImageList {...props} />
         </div>
       </div>
 
@@ -25,24 +25,23 @@ export const Home = (props) => {
         <Divider />
       </div>
 
-      <div data-sb-field-path="brandTitle" className="text-4xl font-bold">
-        {props.brandTitle}
-      </div>
-      <p data-sb-field-path="brandDescription" className="mt-4 text-lg">
-        {props.brandDescription}
-      </p>
-
-      <div className="my-10 grid grid-cols-3 gap-8">
-        {props.productReference.map((product) => (
-          <CardHome {...product} key={product.id} />
-        ))}
-      </div>
-
-      <ButtonHome {...props.button} theme="outline" />
+      <TitleCardImage {...props.brandSection} />
 
       <div className="my-14">
         <Divider />
       </div>
+
+      <div className="my-10 grid grid-cols-3 gap-8">
+        {props.globalEntry.map((stat) => (
+          <StatsHome {...stat} key={stat.id} />
+        ))}
+      </div>
+
+      <div className="my-14">
+        <Divider />
+      </div>
+
+      <TitleCardImage {...props.healthCareSection} />
     </div>
   );
 };
