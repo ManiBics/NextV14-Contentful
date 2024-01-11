@@ -6,10 +6,10 @@ export const TitleCardImage = (props) => {
   return (
     <div data-sb-object-id={props.id}>
       <div data-sb-field-path="title" className="text-4xl font-bold">
-        {props.brandTitle}
+        {props.title}
       </div>
       <p data-sb-field-path="description" className="mt-4 text-lg">
-        {props.brandDescription}
+        {props.description}
       </p>
 
       <div className="my-10 grid grid-cols-3 gap-8">
