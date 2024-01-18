@@ -9,9 +9,9 @@ export default function CardHome(props) {
           data-sb-object-id={props.image.id}
           src={props.image.src}
           alt={props.image.alt}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-3xl"
+          fill
+          sizes="auto"
+          className="rounded-3xl object-cover"
         />
       </div>
 

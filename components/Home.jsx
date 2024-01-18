@@ -3,6 +3,7 @@ import QuiltedImageList from "./ImageList";
 import { Divider } from "@mui/material";
 import { StatsHome } from "./StatsHome";
 import { TitleCardImage } from "./TitleCardImage";
+import { RegionalHome } from "./RegionalHome";
 
 export const Home = (props) => {
   return (
@@ -42,6 +43,10 @@ export const Home = (props) => {
       </div>
 
       <TitleCardImage {...props.healthCareSection} />
+
+      <div className="mt-14" />
+
+      <RegionalHome {...props.regionalSection} />
     </div>
   );
 };

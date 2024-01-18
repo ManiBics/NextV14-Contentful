@@ -32,9 +32,9 @@ export default function QuiltedImageList(props) {
               data-sb-object-id={item.id}
               src={item.src}
               alt={item.alt}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-3xl"
+              fill
+              sizes="auto"
+              className="rounded-3xl object-cover"
             />
           </ImageListItem>
         );
