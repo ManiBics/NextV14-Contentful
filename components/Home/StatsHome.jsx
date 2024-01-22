@@ -5,6 +5,9 @@ import { StatsItem } from "./StatsItem";
 export const StatsHome = (props) => {
   return (
     <>
+      <div className="my-14">
+        <Divider />
+      </div>
       <div
         data-sb-object-id={props.id}
         className="my-10 grid grid-cols-3 gap-8"

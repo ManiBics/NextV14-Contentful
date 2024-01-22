@@ -19,10 +19,6 @@ export const TitleCardImage = (props) => {
         ))}
       </div>
       {props.button && <ButtonHome {...props.button} theme="outline" />}
-
-      <div className="my-14">
-        <Divider />
-      </div>
     </div>
   );
 };
