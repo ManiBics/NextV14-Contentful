@@ -1,10 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getPageFromSlug } from "../../utils/content";
-import { Home } from "../../components/Home";
+import { WelcomeBannerHome } from "../../components/Home/WelcomeBannerHome";
+import { TitleCardImage } from "../../components/TitleCardImage";
+import { RegionalHome } from "../../components/Home/RegionalHome";
+import { StatsHome } from "../../components/Home/StatsHome";
 
 const componentMap = {
-  home: Home,
+  home: WelcomeBannerHome,
+  brandSection: TitleCardImage,
+  statsSection: StatsHome,
+  regionalSection: RegionalHome,
 };
 
 export default function ComposablePage({ params }) {

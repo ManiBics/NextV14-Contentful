@@ -1,6 +1,6 @@
 import React from "react";
 
-export const StatsHome = (props) => {
+export const StatsItem = (props) => {
   return (
     <div className="text-center" data-sb-object-id={props.id}>
       <div data-sb-field-path="value" className="text-5xl font-bold">

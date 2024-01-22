@@ -3,7 +3,7 @@ import TabHome from "./TabHome";
 
 export const RegionalHome = (props) => {
   return (
-    <div data-sb-object-id={props.id}>
+    <div data-sb-object-id={props.id} className="mt-14">
       <div data-sb-field-path="title" className="text-4xl font-bold">
         {props.title}
       </div>

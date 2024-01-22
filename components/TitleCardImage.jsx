@@ -1,6 +1,7 @@
 import React from "react";
-import CardHome from "./CardHome";
-import ButtonHome from "./ButtonHome";
+import CardHome from "./Home/CardHome";
+import ButtonHome from "./Home/ButtonHome";
+import { Divider } from "@mui/material";
 
 export const TitleCardImage = (props) => {
   return (
@@ -18,6 +19,10 @@ export const TitleCardImage = (props) => {
         ))}
       </div>
       {props.button && <ButtonHome {...props.button} theme="outline" />}
+
+      <div className="my-14">
+        <Divider />
+      </div>
     </div>
   );
 };
