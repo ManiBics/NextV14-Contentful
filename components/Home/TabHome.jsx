@@ -62,7 +62,12 @@ export default function TabHome(props) {
         </AntTabs>
       </Box>
       {props.regionalItems.map((item, index) => (
-        <CustomTabPanel key={item.id} value={value} index={index}>
+        <CustomTabPanel
+          key={item.id}
+          value={value}
+          data-sb-object-id={item.id}
+          index={index}
+        >
           <div className="grid grid-cols-2 gap-8">
             {item.relatedCountry.map((country) => (
               <div

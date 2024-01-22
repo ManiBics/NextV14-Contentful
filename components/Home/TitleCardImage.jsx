@@ -1,11 +1,10 @@
 import React from "react";
-import CardHome from "./Home/CardHome";
-import ButtonHome from "./Home/ButtonHome";
-import { Divider } from "@mui/material";
+import CardHome from "./CardHome";
+import ButtonHome from "./ButtonHome";
 
 export const TitleCardImage = (props) => {
   return (
-    <div data-sb-object-id={props.id}>
+    <div data-sb-object-id={props.id} className="px-28">
       <div data-sb-field-path="title" className="text-4xl font-bold">
         {props.title}
       </div>

@@ -4,14 +4,11 @@ import { StatsItem } from "./StatsItem";
 
 export const StatsHome = (props) => {
   return (
-    <>
+    <div className="px-28" data-sb-object-id={props.id}>
       <div className="my-14">
         <Divider />
       </div>
-      <div
-        data-sb-object-id={props.id}
-        className="my-10 grid grid-cols-3 gap-8"
-      >
+      <div className="grid grid-cols-3 gap-8">
         {props?.statItems?.map((stat) => (
           <StatsItem {...stat} key={stat.id} />
         ))}
@@ -19,6 +16,6 @@ export const StatsHome = (props) => {
       <div className="my-14">
         <Divider />
       </div>
-    </>
+    </div>
   );
 };
