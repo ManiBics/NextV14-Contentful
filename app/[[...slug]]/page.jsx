@@ -6,8 +6,10 @@ import { TitleCardImage } from "../../components/Home/TitleCardImage";
 import { RegionalHome } from "../../components/Home/RegionalHome";
 import { StatsHome } from "../../components/Home/StatsHome";
 import { Footer } from "../../components/Home/Footer";
+import Header from "../../components/Header";
 
 const componentMap = {
+  headerSection: Header,
   home: WelcomeBannerHome,
   brandSection: TitleCardImage,
   statsSection: StatsHome,
