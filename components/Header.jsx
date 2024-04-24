@@ -58,6 +58,7 @@ export default function Header(props) {
                   <div
                     data-sb-field-path={`${menu.id}:title`}
                     className="font-medium text-md cursor-pointer"
+                    key={menu.id}
                   >
                     {menu.title}
                   </div>
@@ -88,11 +89,12 @@ export default function Header(props) {
               >
                 {props.subMenuLinks.map((menu) =>
                   menu.type === "icons" ? (
-                    <div className="cursor-pointer">
+                    <div className="cursor-pointer" key={menu.id}>
                       <GetImage {...menu} />
                     </div>
                   ) : (
                     <div
+                      key={menu.id}
                       data-sb-field-path={`${menu.id}:title`}
                       className="font-medium text-lg hover:text-[#019881] cursor-pointer"
                     >

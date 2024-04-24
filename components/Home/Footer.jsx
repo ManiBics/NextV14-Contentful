@@ -37,7 +37,10 @@ export const Footer = (props) => {
 
           <div className="flex mt-6">
             {props.icons.map((icon) => (
-              <div className="p-2 mr-2 rounded-full border-solid border-2 border-white h-10 w-10 flex items-center justify-center cursor-pointer">
+              <div
+                className="p-2 mr-2 rounded-full border-solid border-2 border-white h-10 w-10 flex items-center justify-center cursor-pointer"
+                key={icon.id}
+              >
                 <GetImage {...icon} />
               </div>
             ))}
