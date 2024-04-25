@@ -7,6 +7,7 @@ import { RegionalHome } from "../../components/Home/RegionalHome";
 import { StatsHome } from "../../components/Home/StatsHome";
 import { Footer } from "../../components/Home/Footer";
 import Header from "../../components/Header";
+import NotFound from "../../components/NotFound";
 
 const componentMap = {
   headerSection: Header,
@@ -30,10 +31,11 @@ export default function ComposablePage({ params }) {
 
   return (
     <div>
-      {(data.sections || []).map((section, idx) => {
+      {data?.sections?.map((section, idx) => {
         const Component = componentMap[section.type];
         return <Component key={idx} {...section} />;
       })}
+      {data.error && <NotFound />}
     </div>
   );
 }

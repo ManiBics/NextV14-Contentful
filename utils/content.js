@@ -39,7 +39,7 @@ export async function getPageFromSlug(slug) {
     });
     page = (items ?? [])[0];
   }
-  if (!page) throw new Error(`Page not found for slug: ${slug}`);
+  if (!page) return { error: true };
   return mapEntry(page);
 }
 
