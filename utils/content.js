@@ -63,7 +63,7 @@ function mapEntry(entry) {
       Object.entries(entry.fields).map(([key, value]) => [
         key,
         parseField(value),
-      ])
+      ]) || []
     ),
   };
 }
