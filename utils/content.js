@@ -60,10 +60,10 @@ function mapEntry(entry) {
     id,
     type,
     ...Object.fromEntries(
-      Object.entries(entry.fields).map(([key, value]) => [
+      Object.entries(entry.fields || {}).map(([key, value]) => [
         key,
         parseField(value),
-      ]) || []
+      ])
     ),
   };
 }
