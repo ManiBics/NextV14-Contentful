@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getPageFromSlug } from "../../utils/content";
-import { WelcomeBannerHome } from "../../components/Home/WelcomeBannerHome";
 import { TitleCardImage } from "../../components/Home/TitleCardImage";
 import { RegionalHome } from "../../components/Home/RegionalHome";
 import { StatsHome } from "../../components/Home/StatsHome";
 import { Footer } from "../../components/Home/Footer";
 import Header from "../../components/Header";
 import NotFound from "../../components/NotFound";
+import { WelcomeBanner } from "../../components/common/WelcomeBanner";
 
 const componentMap = {
   headerSection: Header,
-  home: WelcomeBannerHome,
+  home: WelcomeBanner,
   brandSection: TitleCardImage,
   statsSection: StatsHome,
   regionalSection: RegionalHome,

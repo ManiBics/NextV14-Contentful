@@ -7,9 +7,11 @@ import Slide from "@mui/material/Slide";
 import { Stack } from "@mui/material";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
+import { useRouter } from "next/navigation";
 
 export default function Header(props) {
   const { window } = props;
+  const router = useRouter();
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
@@ -35,6 +37,10 @@ export default function Header(props) {
       Search: <SearchIcon data-sb-object-id={props.id} {...props} />,
     };
     return obj[props.name];
+  };
+
+  const handleNavigate = (url) => {
+    if (url) router.push(url);
   };
 
   return (
@@ -97,6 +103,7 @@ export default function Header(props) {
                       key={menu.id}
                       data-sb-field-path={`${menu.id}:title`}
                       className="font-medium text-lg hover:text-[#019881] cursor-pointer"
+                      onClick={() => handleNavigate(menu.url)}
                     >
                       {menu.title}
                     </div>
