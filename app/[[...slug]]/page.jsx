@@ -37,7 +37,9 @@ export default function ComposablePage({ params }) {
         const Component = componentMap[section.type];
         if (!Component)
           return (
-            <div className="text-red-500 text-center">Component is missing</div>
+            <div key={idx} className="text-red-500 text-center">
+              Component is missing
+            </div>
           );
         return <Component key={idx} {...section} />;
       })}
