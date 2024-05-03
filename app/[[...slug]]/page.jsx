@@ -8,6 +8,7 @@ import { Footer } from "../../components/Home/Footer";
 import Header from "../../components/Header";
 import NotFound from "../../components/NotFound";
 import { WelcomeBanner } from "../../components/common/WelcomeBanner";
+import ThreeImagesAndCards from "../../components/OurCommitment/ThreeImagesAndCards";
 
 const componentMap = {
   headerSection: Header,
@@ -16,6 +17,7 @@ const componentMap = {
   statsSection: StatsHome,
   regionalSection: RegionalHome,
   footerSection: Footer,
+  threeImagesAndCards: ThreeImagesAndCards,
 };
 
 export default function ComposablePage({ params }) {
@@ -33,6 +35,10 @@ export default function ComposablePage({ params }) {
     <div>
       {data?.sections?.map((section, idx) => {
         const Component = componentMap[section.type];
+        if (!Component)
+          return (
+            <div className="text-red-500 text-center">Component is missing</div>
+          );
         return <Component key={idx} {...section} />;
       })}
       {data.error && <NotFound />}
