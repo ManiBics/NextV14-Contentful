@@ -26,8 +26,12 @@ const ThreeImagesAndCards = (props) => {
                 />
               </div>
               <div
-                className="rounded-3xl p-6 mt-6 h-2/6"
-                style={{ backgroundColor: colors[index] }}
+                className="rounded-3xl p-6 mt-6"
+                style={{
+                  backgroundColor: colors[index],
+                  height: `calc(100% - 400px)`,
+                }}
+                data-sb-object-id={item?.titleAndBulletPoints?.id}
               >
                 <p
                   data-sb-field-path="title"
@@ -37,7 +41,9 @@ const ThreeImagesAndCards = (props) => {
                 </p>
                 <ul className="list-disc list-inside text-base">
                   {item.titleAndBulletPoints.bulletPoint.map((point) => (
-                    <li key={point.id}>{point.text}</li>
+                    <li key={point.id} data-sb-field-path={`${point.id}:text`}>
+                      {point.text}
+                    </li>
                   ))}
                 </ul>
               </div>
