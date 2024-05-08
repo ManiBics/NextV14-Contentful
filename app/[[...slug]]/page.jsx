@@ -9,6 +9,7 @@ import Header from "../../components/Header";
 import NotFound from "../../components/NotFound";
 import { WelcomeBanner } from "../../components/common/WelcomeBanner";
 import ThreeImagesAndCards from "../../components/OurCommitment/ThreeImagesAndCards";
+import DynamicImageAndCard from "../../components/OurCommitment/DynamicImageAndCard";
 
 const componentMap = {
   headerSection: Header,
@@ -18,6 +19,7 @@ const componentMap = {
   regionalSection: RegionalHome,
   footerSection: Footer,
   threeImagesAndCards: ThreeImagesAndCards,
+  dynamicImageAndCard: DynamicImageAndCard,
 };
 
 export default function ComposablePage({ params }) {
