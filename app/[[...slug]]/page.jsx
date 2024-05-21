@@ -10,6 +10,7 @@ import NotFound from "../../components/NotFound";
 import { WelcomeBanner } from "../../components/common/WelcomeBanner";
 import ThreeImagesAndCards from "../../components/OurCommitment/ThreeImagesAndCards";
 import DynamicImageAndCard from "../../components/OurCommitment/DynamicImageAndCard";
+import { getLocale } from "../../utils";
 
 const componentMap = {
   headerSection: Header,
@@ -27,8 +28,9 @@ export default function ComposablePage({ params }) {
 
   useEffect(() => {
     (async () => {
+      const { locale = "en-US" } = getLocale(params?.slug);
       const slug = "/" + (params?.slug ?? [""]).join("/");
-      const page = await getPageFromSlug(slug);
+      const page = await getPageFromSlug(slug, locale);
       setData(page);
     })();
   }, [params?.slug]);

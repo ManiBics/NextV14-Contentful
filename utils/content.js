@@ -28,19 +28,25 @@ export async function getPagePaths() {
   });
 }
 
-export async function getPageFromSlug(slug) {
-  const { items } = await getEntries(PAGE_CONTENT_TYPE_ID, {
-    "fields.slug": slug,
-  });
-  let page = (items ?? [])[0];
-  if (!page && slug !== "/" && slug.startsWith("/")) {
+export async function getPageFromSlug(slug, locale) {
+  try {
     const { items } = await getEntries(PAGE_CONTENT_TYPE_ID, {
-      "fields.slug": slug.slice(1),
+      "fields.slug": slug,
+      locale,
     });
-    page = (items ?? [])[0];
+    let page = (items ?? [])[0];
+    if (!page && slug !== "/" && slug.startsWith("/")) {
+      const { items } = await getEntries(PAGE_CONTENT_TYPE_ID, {
+        "fields.slug": slug.slice(1),
+        locale,
+      });
+      page = (items ?? [])[0];
+    }
+    if (!page) return { error: true };
+    return mapEntry(page);
+  } catch (e) {
+    return { error: true };
   }
-  if (!page) return { error: true };
-  return mapEntry(page);
 }
 
 function mapEntry(entry) {

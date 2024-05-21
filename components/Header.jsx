@@ -8,6 +8,7 @@ import { Stack } from "@mui/material";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { usePathname, useRouter } from "next/navigation";
+import LanguageSelection from "./common/LanguageSelection";
 
 export default function Header(props) {
   const { window } = props;
@@ -79,7 +80,7 @@ export default function Header(props) {
             >
               <div
                 className="flex h-full items-center "
-                onClick={() => handleNavigate("/")}
+                onClick={() => handleNavigate(props.logoUrl || "/")}
               >
                 <Image
                   data-sb-object-id={props.logo.id}
@@ -99,10 +100,8 @@ export default function Header(props) {
                 spacing={4}
               >
                 {props.subMenuLinks.map((menu) =>
-                  menu.type === "icons" ? (
-                    <div className="cursor-pointer" key={menu.id}>
-                      <GetImage {...menu} />
-                    </div>
+                  menu.type === "languages" ? (
+                    <LanguageSelection {...menu} />
                   ) : (
                     <div
                       key={menu.id}
