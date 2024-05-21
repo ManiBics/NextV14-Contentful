@@ -101,7 +101,7 @@ export default function Header(props) {
               >
                 {props.subMenuLinks.map((menu) =>
                   menu.type === "languages" ? (
-                    <LanguageSelection {...menu} />
+                    <LanguageSelection key={menu.id} {...menu} />
                   ) : (
                     <div
                       key={menu.id}
