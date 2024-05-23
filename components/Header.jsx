@@ -54,25 +54,28 @@ export default function Header(props) {
             disableGutters
             className="flex-col"
           >
-            <div className="bg-black text-white w-full px-28 h-10">
-              <Stack
-                direction="row"
-                justifyContent="flex-end"
-                alignItems="center"
-                height="100%"
-                spacing={4}
-              >
-                {props.menuLinks.map((menu) => (
-                  <div
-                    data-sb-field-path={`${menu.id}:title`}
-                    className="font-medium text-md cursor-pointer"
-                    key={menu.id}
-                  >
-                    {menu.title}
-                  </div>
-                ))}
-              </Stack>
-            </div>
+            {props.menuLinks && (
+              <div className="bg-black text-white w-full px-28 h-10">
+                <Stack
+                  direction="row"
+                  justifyContent="flex-end"
+                  alignItems="center"
+                  height="100%"
+                  spacing={4}
+                >
+                  {props.menuLinks.map((menu) => (
+                    <div
+                      data-sb-field-path={`${menu.id}:title`}
+                      className="font-medium text-md cursor-pointer"
+                      key={menu.id}
+                    >
+                      {menu.title}
+                    </div>
+                  ))}
+                </Stack>
+              </div>
+            )}
+
             <Stack
               direction="row"
               className="h-28 px-28 w-full"
