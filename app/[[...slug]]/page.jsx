@@ -29,7 +29,7 @@ export default function ComposablePage({ params }) {
   useEffect(() => {
     (async () => {
       const { locale = "en-US" } = getLocale(params?.slug);
-      const slug = "/" + (params?.slug ?? [""]).join("/");
+      const slug = "/" + (params?.slug ?? [""]).join("/").replace("index", "");
       const page = await getPageFromSlug(slug, locale);
       setData(page);
     })();
